@@ -88,21 +88,26 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
 
 ## How to Reproduce
 
-1. **Set Up the Environment**
-   Install the required dependencies using:
-   ```bash
-   pip install -r requirements.txt
-   ```
+Follow these steps to use the dataset and retrain the model on the **Roboflow platform**:
 
-2. **Access the Dataset**
+1. **Access the Dataset**
    Download the dataset from the links provided in the [Dataset](#dataset) section.
 
-3. **Train the Model**
-   - Use the Jupyter notebook in `notebooks/training.ipynb` for model training.
-   - Alternatively, replicate training using YOLOv11 on your local machine.
+2. **Create a Roboflow Project**  
+   - Sign up at [Roboflow](https://roboflow.com/) and create a new **Object Detection project**.
+   - Upload the dataset (images and `coco_annotations.json`).
 
-4. **Evaluate the Model**
-   - Use the notebook in `notebooks/evaluation.ipynb` to visualize metrics and predictions.
+3. **Configure Dataset**  
+   - Split the dataset into training, validation, and testing sets.
+   - Apply preprocessing (resize to 640x640) and augmentations (e.g., brightness adjustments).
+
+4. **Train the Model**  
+   - Use Roboflow's built-in **Train** tab to train a YOLOv11 model.
+   - Monitor metrics like mAP, Precision, and Recall.
+
+5. **Evaluate and Deploy**  
+   - Analyze results using metrics, graphs, and predictions.
+   - Deploy the model via API or download it for local use.
 
 ---
 
