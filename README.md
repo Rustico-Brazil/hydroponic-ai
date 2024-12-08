@@ -69,13 +69,11 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
 - **Recall**: **88.1%**
 
 ### Performance Graphs:
-- **mAP over Epochs**:
-  ![mAP Graph](results/map.png)
 - **Training Graphs**:
   ![Results](results/results.png)
-- **mAP over class - Validation Set**:
+- **mAP over Class - Validation Set**:
   ![Results](results/map-class-valid.png)
-- **mAP over class - Test Set**:
+- **mAP over Class - Test Set**:
   ![Results](results/map-class-test.png)
 
 ---
