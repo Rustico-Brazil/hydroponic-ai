@@ -1,5 +1,3 @@
-# hydroponic-ai
-
 # Hydroponic Development Stage Classifier
 
 We created a classification solution to identify hydroponic crop development stages using the Roboflow platform.
