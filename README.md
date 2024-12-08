@@ -45,7 +45,7 @@ The dataset is hosted on Google Drive and includes the original and augmented ve
 1. **Annotation Process**:
    - Use a polygon annotation tool to outline the hydroponic crops in each image.
 
-![Annotation Tool](screenshots/annotation_tool.png)
+![Annotation Tool](results/annotation_tool.png)
 
    - Assign one of the following classes to each region:
      - `early` (Early stage)
@@ -72,9 +72,9 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
 - **mAP over Epochs**:
   ![mAP Graph](results/map.png)
 - **Object Loss**:
-  ![Object Loss Graph](results/object_loss.png)
+  ![Object Loss Graph](results/object-loss.png)
 - **Class Loss**:
-  ![Class Loss Graph](results/class_loss.png)
+  ![Class Loss Graph](results/class-loss.png)
 - **Box Loss**:
   ![Box Loss Graph](results/box-loss.png)
 - **Training Graphs**:
