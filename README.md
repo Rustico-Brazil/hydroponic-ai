@@ -71,12 +71,6 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
 ### Performance Graphs:
 - **mAP over Epochs**:
   ![mAP Graph](results/map.png)
-- **Object Loss**:
-  ![Object Loss Graph](results/object-loss.png)
-- **Class Loss**:
-  ![Class Loss Graph](results/class-loss.png)
-- **Box Loss**:
-  ![Box Loss Graph](results/box-loss.png)
 - **Training Graphs**:
   ![Results](results/results.png)
 - **mAP over class - Validation Set**:
