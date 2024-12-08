@@ -17,26 +17,26 @@ The development stages considered are:
 ## Dataset
 
 ### Dataset Details
-- **Total Images**: 1,147
+- **Total Images**: 1,147 (including augmented data)
 - **Train Set**: 1,076 images (94%)
 - **Validation Set**: 48 images (4%)
 - **Test Set**: 23 images (2%)
 
-The dataset is stored in the `data/` folder and includes:
-- **COCO JSON File**: `data/coco_annotations.json`
-- **Images Folder**: `data/images/`
+### Accessing the Dataset
+The dataset is hosted on Google Drive and includes the original and augmented versions:
+
+1. **Original Data**:
+   - Download from [Google Drive - Original Data](https://drive.google.com/drive/folders/1n6uep0UZztH4hrME0ri1NfhDuk6vCfVq)
+   - Contains the raw images taken from each crop.
+
+2. **Augmented Data**:
+   - Download from [Google Drive - Augmented Data](https://drive.google.com/drive/folders/1fuf_kWXcjVw2eKkiKvcZHyFeHq2vC6PN)
+   - Includes the augmented images and corresponding annotations annotations in COCO JSON format.
 
 ### Using the Dataset
-1. **Download the Repository**:
-   Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/your-repo-name/hydroponic-classifier.git
-   cd hydroponic-classifier
-   ```
-
-2. **Access the Dataset**:
-   - The dataset annotations are in the `data/coco_annotations.json` file.
-   - The corresponding images are located in the `data/images/` folder.
+1. Download both datasets from the links above.
+2. Unzip the folders and organize the files into a local directory.
+3. Use the `coco_annotations.json` file in the augmented data folder for training, validation, and testing.
 
 ---
 
@@ -44,13 +44,16 @@ The dataset is stored in the `data/` folder and includes:
 
 1. **Annotation Process**:
    - Use a polygon annotation tool to outline the hydroponic crops in each image.
+
+![Annotation Tool](screenshots/annotation_tool.png)
+
    - Assign one of the following classes to each region:
      - `early` (Early stage)
      - `growth` (Growth stage)
      - `maturity` (Mature stage)
      - `harvest` (Ready for harvest)
 
-2. **Preprocessing**:
+3. **Preprocessing**:
    - Images are resized to 640x640 pixels for training.
    - Brightness adjustments are applied randomly between -15% and +15%.
 
@@ -60,18 +63,10 @@ The dataset is stored in the `data/` folder and includes:
 
 The YOLOv11 model was trained using the Roboflow interface. Below are the metrics and graphs from training, validation, and testing:
 
-### Training Metrics:
+### Model Metrics:
 - **mAP (Mean Average Precision)**: **96.0%**
 - **Precision**: **91.4%**
 - **Recall**: **88.1%**
-
-### Validation Metrics:
-- **mAP**: 94.8%
-- **Precision**: 89.7%
-- **Recall**: 86.5%
-
-### Testing Metrics:
-- **Accuracy**: 88.8%
 
 ### Performance Graphs:
 - **mAP over Epochs**:
@@ -81,7 +76,13 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
 - **Class Loss**:
   ![Class Loss Graph](results/class_loss.png)
 - **Box Loss**:
-  ![Box Loss Graph](results/box_loss.png)
+  ![Box Loss Graph](results/box-loss.png)
+- **Training Graphs**:
+  ![Results](results/results.png)
+- **mAP over class - Validation Set**:
+  ![Results](results/map-class-valid.png)
+- **mAP over class - Test Set**:
+  ![Results](results/map-class-test.png)
 
 ---
 
@@ -94,7 +95,7 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
    ```
 
 2. **Access the Dataset**
-   Use the dataset provided in the `data/` folder.
+   Download the dataset from the links provided in the [Dataset](#dataset) section.
 
 3. **Train the Model**
    - Use the Jupyter notebook in `notebooks/training.ipynb` for model training.
@@ -107,12 +108,15 @@ The YOLOv11 model was trained using the Roboflow interface. Below are the metric
 
 ## Results
 
-### Visualizations:
-**Sample Annotation**:
-![Sample Annotation](screenshots/sample_annotation.png)
-
 **Sample Prediction**:
-![Sample Prediction](results/predictions_sample.png)
+![Sample Prediction](results/prediction-sample.png)
+
+---
+
+## Future Improvements
+- **IoT Integration**: Automate the collection of images using IoT-enabled cameras.
+- **Anomaly Detection**: Develop unsupervised learning pipelines to detect anomalies in crop growth.
+- **Real-Time Monitoring**: Implement real-time predictions for on-site decision-making.
 
 ---
 
@@ -129,15 +133,3 @@ This project is licensed under the [MIT License](LICENSE).
 ### References
 - [AI4GOOD](https://ai4good.org/)
 ```
-
----
-
-### Resumo das Alterações:
-1. **Dataset no Repositório**:
-   - Substituímos a dependência da API Roboflow por arquivos diretamente acessíveis no repositório.
-2. **Organização de Arquivos**:
-   - Adicionamos `coco_annotations.json` e as imagens no subdiretório `data/`.
-3. **Atualização no README**:
-   - Substituímos as instruções de download via API por instruções para acessar os dados do repositório.
-
-Se precisar de mais ajustes, é só avisar! 😊
