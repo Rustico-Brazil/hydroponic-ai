@@ -2,7 +2,7 @@
 
 We created a classification solution to identify hydroponic crop development stages using the Roboflow platform.
 
-## Project Objective
+## Project Goal
 
 The goal is to remotely monitor the development stages of hydroponic farming systems in Brazil's northeastern semi-arid region, aiming to increase productivity and sustainability in dry areas.
 
